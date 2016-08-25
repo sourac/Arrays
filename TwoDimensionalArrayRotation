@@ -1,0 +1,33 @@
+
+public class TwoDimensionalArrayRotation {
+	public static void main(String[] args) {
+		int[][] ary = { 
+				{ 1, 2, 3, 4 }, 
+				{ 5, 6, 7, 8 }, 
+				{ 9, 0, 1, 2 }, 
+				{ 3, 4, 5, 6 } 
+				};
+		
+		int[][] rotated=rotate2D(ary,4);
+		printArray(rotated);
+	}
+
+	private static void printArray(int[][] rotated) {
+	  for(int i=0;i<4;i++){
+		  for(int j=0;j<4;j++){
+			  System.out.print(rotated[i][j]+" ");
+		  }
+		  System.out.println(" ");
+	  }
+	}
+
+	private static int[][] rotate2D(int[][] ary, int n) {
+		int[][] ret=new int[n][n];
+		for(int i=0;i<n;i++){
+			for(int j=0;j<n;j++){
+				ret[i][j]=ary[n-j-1][i];
+			}
+		}
+		return ret;
+	}
+}
