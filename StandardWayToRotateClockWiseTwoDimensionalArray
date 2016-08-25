@@ -1,0 +1,38 @@
+
+public class StandardWayToRotateClockWiseTwoDimensionalArray {
+public static void main(String[] args) {
+	
+	int[][] ary = { 
+			{ 1, 2, 3, 4 }, 
+			{ 5, 6, 7, 8 }, 
+			{ 9, 0, 1, 2 }, 
+			{ 3, 4, 5, 6 } 
+			};
+	
+	int[][] rec=rotateThisOne(ary);
+	display(rec);
+}
+
+private static void display(int[][] rec) {
+	for(int i=0;i<rec.length;i++){
+		for(int j=0;j<rec.length;j++){
+			System.out.print(rec[i][j]+" ");
+		}
+		System.out.println();
+	}
+	
+}
+
+private static int[][] rotateThisOne(int[][] ary) {
+final int M=ary.length;
+final int N=ary[0].length;
+int[][] ret=new int[N][M];
+for(int r=0;r<M;r++){
+	for(int c=0;c<N;c++){
+		ret[c][M-1-r]=ary[r][c];
+	}
+}
+return ret;
+
+}
+}
