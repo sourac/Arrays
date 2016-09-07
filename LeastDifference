@@ -1,0 +1,30 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package dsnetbean;
+
+/**
+ *
+ * @author atul
+ */
+public class LeastDifference {
+    public static void main(String[] args){
+         int[]arr={64,57,2,78,43,73,53,86};
+         findLeastDifferenceInArray(arr);
+    }
+
+    private static void findLeastDifferenceInArray(int[] arr) {
+     //   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     System.out.println(arr.length);
+     int minDiff=Integer.MAX_VALUE;
+     for(int i=0;i<arr.length-1;i++){
+     int diff=Math.abs(arr[i]-arr[i+1]);
+     if(diff<minDiff)
+         minDiff=diff;
+     }
+     
+    System.out.println("minimum difference is : " + minDiff);
+    }
+}
